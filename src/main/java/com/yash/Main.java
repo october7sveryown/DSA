@@ -15,10 +15,6 @@ public class Main {
         myArray.insertItem(50);
         myArray.insertItem(60);
         myArray.removeItemAt(1);
-        int ars[] = myArray.reverse();
-        for(int i=0;i<ars.length;i++){
-            System.out.println(ars[i]);
-        }
         myArray.printArray();
     }
 }
