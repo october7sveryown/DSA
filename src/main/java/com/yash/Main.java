@@ -4,18 +4,27 @@ import com.yash.array.Array;
 import com.yash.hashmaps.HashMaps;
 import com.yash.hashmaps.HashSet;
 import com.yash.hashmaps.HashTableImplementation;
+import com.yash.trees.Tree;
 
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        HashTableImplementation hashTable = new HashTableImplementation();
-        hashTable.put(6,"A");
-        hashTable.put(11, "A++");
-        hashTable.put(8, "C");
-        hashTable.put(6,"A-copy");
-        hashTable.remove(6);
-        hashTable.remove(11);
-        System.out.println(hashTable.get(8));
+        Tree myTree = new Tree();
+        myTree.insert(7);
+        myTree.insert(4);
+        myTree.insert(9);
+        myTree.insert(1);
+        myTree.insert(6);
+        myTree.insert(8);
+        myTree.insert(10);
+        System.out.println(myTree);
+        myTree.preOrderTraversal();
+        System.out.println();
+        myTree.inOrderTraversal();
+        System.out.println();
+        myTree.postOrderTraversal();
+        System.out.println(myTree.getHeight());
+        System.out.println("Min is :" +myTree.getMin());
     }
 }
