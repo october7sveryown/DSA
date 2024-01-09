@@ -18,13 +18,6 @@ public class Main {
         myTree.insert(6);
         myTree.insert(8);
         myTree.insert(10);
-        System.out.println(myTree);
-        myTree.preOrderTraversal();
-        System.out.println();
-        myTree.inOrderTraversal();
-        System.out.println();
-        myTree.postOrderTraversal();
-        System.out.println(myTree.getHeight());
-        System.out.println("Min is :" +myTree.getMin());
+        myTree.levelOrderTraversal();
     }
 }

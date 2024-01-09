@@ -133,4 +133,62 @@ public class Tree {
         return last.value;
     }
 
+    public boolean equals(Tree tree){
+        return equals(root, tree.root);
+    }
+
+    private boolean equals(Node first, Node second){
+        if(first == null && second == null)
+            return true;
+
+        if(first != null && second !=null)
+            return first.value==second.value && equals(first.leftChild, second.leftChild)
+                    && equals(first.rightChild, first.rightChild);
+
+        return false;
+    }
+
+    public void swapRoot(){
+        var temp = root;
+        root.leftChild = root.rightChild;
+        root.rightChild = temp;
+    }
+
+    public boolean isBST(){
+        return isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private boolean isBST(Node node, int min, int max){
+        if(node==null)
+            return true;
+
+        if(node.value < min || node.value > max)
+            return false;
+
+        return isBST(node.leftChild, min, node.value -1 )
+                && isBST(node.rightChild, node.value + 1, max);
+    }
+
+    public void distanceAt(int distance){
+        distanceAt(root, distance);
+    }
+
+    private void distanceAt(Node root, int distance){
+        if(root==null)
+            System.out.println("Tree is empty");
+        if(distance == 0)
+            System.out.println(root.value);
+        else {
+            distance = distance - 1;
+            distanceAt(root.leftChild, distance);
+            distanceAt(root.rightChild, distance);
+        }
+    }
+
+    public void levelOrderTraversal(){
+        for(int i=0;i<=getHeight();i++)
+            distanceAt(i);
+    }
+
+
 }
