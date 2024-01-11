@@ -61,4 +61,55 @@ public class LinkedList {
             return counter;
         return -1;
     }
+
+    public void reverse(){
+        if(first==null) return;
+
+       var current = first.next;
+       var previous = first;
+       while(current!=null){
+           var next = current.next;
+           current.next = previous;
+           previous = current;
+           current = next;
+       }
+        last = first;
+        last.next = null;
+        first = previous;
+    }
+
+    public int findKthNodeFromEnd(int k){
+
+        if(first == null){
+            throw new IllegalArgumentException();
+        }
+
+        var p1 = first;
+        var p2 = first;
+        for(int i=0; i<k-1; i++){
+            p2 = p2.next;
+            if(p2==null)
+                throw new IllegalArgumentException();
+        }
+
+        while(p2!=last){
+            p1=p1.next;
+            p2=p2.next;
+        }
+        return p1.value;
+    }
+
+    public void findMiddle(){
+        var a = first;
+        var b = first;
+        while(b!=last && b.next!=last){
+            a=a.next;
+            b=b.next.next;
+        }
+        if(b==last){
+            System.out.println(a.value);
+        } else {
+            System.out.println(a.value + " "+ a.next.value);
+        }
+    }
 }

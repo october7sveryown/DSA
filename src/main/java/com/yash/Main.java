@@ -15,6 +15,7 @@ public class Main {
         myList.addLast(10);
         myList.addFirst(5);
         myList.addLast(20);
-        System.out.println("Value found at " + myList.indexOf(5));
+        myList.addLast(40);
+        myList.findMiddle();
     }
 }
