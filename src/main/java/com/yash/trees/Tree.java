@@ -17,8 +17,10 @@ public class Tree {
 
     }
 
+
+
     Node root;
-    public void insert(int value){
+    private void insert(int value){
         if(root == null){
             root = new Node(value);
             return;
