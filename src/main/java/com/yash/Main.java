@@ -13,7 +13,9 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         AVLTree myTree=new AVLTree();
-        myTree.insert(10);
-        myTree.insert(20);
+        myTree.insert(70);
+        myTree.insert(60);
+        myTree.insert(65);
+
     }
 }
